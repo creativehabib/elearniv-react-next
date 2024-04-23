@@ -1,6 +1,6 @@
 const baseUrl =
 	process.env.NODE_ENV === "production"
-		? "https://elearniv-react-next-i5p7.vercel.app"
+		? "https://elearniv-react.envytheme.com"
 		: "http://localhost:3000";
 
 export default baseUrl;
