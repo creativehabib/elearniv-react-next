@@ -1,10 +1,12 @@
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import isEmail from "validator/lib/isEmail";
+import cors from '../cors'; 
 
 import User from "database/models/user";
 
 export default async function handler(req, res) {
+	await cors(req, res); // Apply CORS middleware
 	switch (req.method) {
 		case "POST":
 			await userSignin(req, res);
@@ -43,14 +45,16 @@ const userSignin = async (req, res) => {
 			});
 		}
 
-		if (!user.status) {
-			return res.status(404).json({
-				message:
-					"This account is temporarily disabled, please contact the support email",
-			});
-		}
+		// if (!user.status) {
+		// 	return res.status(404).json({
+		// 		message:
+		// 			"This account is temporarily disabled, please contact the support email",
+		// 	});
+		// }
 
 		const passwordsMatch = await bcrypt.compare(password, user.password);
+		
+		// const passwordsMatch = await  user.password
 		if (passwordsMatch) {
 			const elarniv_users_token = jwt.sign(
 				{

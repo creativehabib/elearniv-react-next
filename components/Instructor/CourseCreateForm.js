@@ -26,6 +26,7 @@ const INITIAL_VALUE = {
 	what_you_will_learn: "",
 	who_is_this_course_for: "",
 	catId: "",
+
 };
 
 const CourseCreateForm = ({ btnText, is_class }) => {
@@ -144,6 +145,7 @@ const CourseCreateForm = ({ btnText, is_class }) => {
 				who_is_this_course_for,
 				catId,
 				is_class,
+				approved:"0"
 			};
 
 			const payloadHeader = {

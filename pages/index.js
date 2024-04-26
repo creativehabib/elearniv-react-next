@@ -15,6 +15,7 @@ import baseUrl from "@/utils/baseUrl";
 function Index({ courses, user }) {
 	return (
 		<>
+		
 			<Navbar user={user} />
 			<MainBanner user={user} courses={courses} />
 			<Features />
@@ -30,14 +31,14 @@ function Index({ courses, user }) {
 	);
 }
 
-// This gets called on every request
-export async function getServerSideProps() {
-	// Fetch data from external API
-	const res = await fetch(`${baseUrl}/api/home-banner`);
-	const { courses } = await res.json();
+// // This gets called on every request
+// export async function getServerSideProps() {
+// 	// Fetch data from external API
+// 	const res = await fetch(`${baseUrl}/api/home-banner`);
+// 	const { courses } = await res.json();
 
-	// Pass data to the page via props
-	return { props: { courses } };
-}
+// 	// Pass data to the page via props
+// 	return { props: { courses } };
+// }
 
 export default Index;

@@ -27,6 +27,7 @@ const Index = ({ user }) => {
 	useEffect(() => {
 		fetchCourses();
 	}, []);
+	console.log("my courses",courses)
 
 	const confirmDelete = (courseId) => {
 		confirmAlert({

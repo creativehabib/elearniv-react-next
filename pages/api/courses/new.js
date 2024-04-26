@@ -36,6 +36,7 @@ const handlePostRequest = async (req, res) => {
 		who_is_this_course_for,
 		catId,
 		is_class,
+		approved,
 	} = req.body;
 	try {
 		const { userId } = jwt.verify(
@@ -70,6 +71,7 @@ const handlePostRequest = async (req, res) => {
 			who_is_this_course_for,
 			userId,
 			catId,
+			approved,
 			is_class: is_class && true,
 		});
 

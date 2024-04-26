@@ -93,6 +93,7 @@ const Index = ({
 		</>
 	);
 };
+//done by me
 
 // This gets called on every request
 export async function getServerSideProps() {

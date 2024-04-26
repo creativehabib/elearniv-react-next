@@ -1,9 +1,9 @@
 import User from "database/models/user";
 
 export default async function handler(req, res) {
-	if (!("authorization" in req.headers)) {
-		return res.status(401).json({ message: "No autorization token" });
-	}
+	// if (!("authorization" in req.headers)) {
+	// 	return res.status(401).json({ message: "No autorization token" });
+	// }
 	switch (req.method) {
 		case "GET":
 			await handleGet(req, res);
@@ -23,7 +23,7 @@ const handleGet = async (req, res) => {
 		const instructors = await User.findAll({
 			where: {
 				instructor_request: true,
-				instructor_request_confirmed: false,
+				 instructor_request_confirmed: false,
 			},
 		});
 

@@ -25,7 +25,25 @@ const nextConfig = {
 			"https://api.cloudinary.com/v1_1/dev-empty/raw/upload",
 		STRIPE_SECRET_KEY: "sk_test_2DqyjEwaU0Nq0PpEMVQ3qSAw00zgrbnfPk",
 		STRIPE_PUBLISHABLE_KEY: "pk_test_ZaZZWZGlvdIn12yFleIqyjSI00G4e18Kf7",
+		//RazorPay keys
+        RAZORPAY_KEY:'rzp_test_atSnWEBps48dIi',
+        RAZORPAY_SECRET:'64o837Z4r7jYP4CRibDApODX',
 	},
+	// module.exports = {
+	// 	async headers() {
+	// 	  return [
+	// 		{
+	// 		  source: "*",
+	// 		  headers: [
+	// 			{ key: "Access-Control-Allow-Origin", value: "*" },
+	// 			{ key: "Access-Control-Allow-Methods", value: "GET,POST,PUT,DELETE" },
+	// 			{ key: "Access-Control-Allow-Headers", value: "Content-Type, Authorization" },
+	// 		  ],
+	// 		},
+	// 	  ];
+	// 	},
+	//   }
+	  
 };
 
 module.exports = nextConfig;
