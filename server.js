@@ -1,15 +1,15 @@
-const https = require('https');
 const fs = require('fs');
-const next = require('next');
+const https = require('https');
 const { createServer } = require('http');
+const next = require('next');
 
 const dev = process.env.NODE_ENV !== 'production';
 const app = next({ dev });
 const handle = app.getRequestHandler();
 
 const httpsOptions = {
-  key: fs.readFileSync('/kce.key'),
-  cert: fs.readFileSync('/cert.crt'),
+  key: fs.readFileSync('/etc/ssl/certs/certs'),
+  cert: fs.readFileSync('/etc/ssl/certs/cert.pem'),
 };
 
 app.prepare().then(() => {
